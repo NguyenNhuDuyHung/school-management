@@ -82,7 +82,6 @@ const FinanceChart = () => {
         <h1 className="text-lg font-semibold">Finance</h1>
         <Image src="/moreDark.png" alt="" width={20} height={20} />
       </div>
-
       <ResponsiveContainer width="100%" height="90%">
         <LineChart
           width={500}
@@ -98,11 +97,12 @@ const FinanceChart = () => {
           <CartesianGrid strokeDasharray="3 3" stroke="#ddd" />
           <XAxis
             dataKey="name"
+            axisLine={false}
             tick={{ fill: "#d1d5db" }}
             tickLine={false}
             tickMargin={10}
           />
-          <YAxis tick={{ fill: "#d1d5db" }} tickLine={false} tickMargin={10} />
+          <YAxis axisLine={false} tick={{ fill: "#d1d5db" }} tickLine={false}  tickMargin={20}/>
           <Tooltip />
           <Legend
             align="center"
@@ -115,12 +115,7 @@ const FinanceChart = () => {
             stroke="#C3EBFA"
             strokeWidth={5}
           />
-          <Line
-            type="monotone"
-            dataKey="expense"
-            stroke="#CFCEFF"
-            strokeWidth={5}
-          />
+          <Line type="monotone" dataKey="expense" stroke="#CFCEFF" strokeWidth={5}/>
         </LineChart>
       </ResponsiveContainer>
     </div>
